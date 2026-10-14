@@ -1,0 +1,21 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          { "type": "command", "command": "ruff format --quiet \"$CLAUDE_PROJECT_DIR\"" },
+          { "type": "command", "command": "ruff check --fix --exit-zero --quiet \"$CLAUDE_PROJECT_DIR\"" }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|MultiEdit|Write|Grep|Bash",
+        "hooks": [
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/block_env.py\"" }
+        ]
+      }
+    ]
+  }
+}
