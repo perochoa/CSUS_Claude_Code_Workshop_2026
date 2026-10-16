@@ -4,7 +4,7 @@
 
 ## Concept
 
-A skill is a folder containing a `SKILL.md`. The agent loads the skill only when the task matches its **description**, so the description must say *when* to use it. Skills can also bundle scripts and reference files, which the agent reads only when it needs them.
+A skill is a folder containing a `SKILL.md`. The agent loads the skill only when the task matches its **description**, so the description must say _when_ to use it. Skills can also bundle scripts and reference files, which the agent reads only when it needs them.
 
 ## Do it
 
@@ -15,6 +15,7 @@ Create `.claude/skills/write-endpoint-tests/SKILL.md`:
 name: write-endpoint-tests
 description: Write pytest tests for a FastAPI endpoint in this repo. Use when asked to add, extend, or fix tests for a route.
 ---
+
 # Writing endpoint tests
 
 1. Read the route and the models it touches.
@@ -24,9 +25,11 @@ description: Write pytest tests for a FastAPI endpoint in this repo. Use when as
 5. If a test exposes a real bug, stop and report it. Never weaken a test to make it pass.
 ```
 
-Restart Claude Code, or run `/clear`. Then ask:
+Restart Claude Code, or run `/clear`. Then run:
 
-> What skills do you have available?
+> /skills
+
+See if the newly created skill is in the list.
 
 ## Exercise (7 min): testing
 
